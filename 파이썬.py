@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -26,5 +27,6 @@ async def on_message(message):
         await message.channel.send("https://pubg.game.daum.net/pubg/index.daum")
     if message.content.startswith("!카트라이더"):
         await message.channel.send("https://kart.nexon.com/events/2021/0107/Update.aspx")
-
-client.run("Nzk2MTc1NTgxOTk3MTcwNzAw.X_UGSg.KjpWKfjtzPxU4ApeeuC2EftQTAs")
+        
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
